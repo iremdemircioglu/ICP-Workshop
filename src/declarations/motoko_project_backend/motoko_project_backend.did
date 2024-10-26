@@ -1,0 +1,14 @@
+type Product = 
+ record {
+   description: text;
+   id: nat;
+   inStock: bool;
+   name: text;
+   price: nat;
+ };
+service : {
+  addProduct: (text, nat, text) -> (nat);
+  getAllProducts: () -> (vec Product) query;
+  getProduct: (nat) -> (opt Product) query;
+  updateStockStatus: (nat, bool) -> (bool);
+}
